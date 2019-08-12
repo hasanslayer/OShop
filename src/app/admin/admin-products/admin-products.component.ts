@@ -9,12 +9,9 @@ import { ProductService } from '../../product.service';
 export class AdminProductsComponent implements OnInit {
   products$;
 
-  constructor(private productService:ProductService) {
+  constructor(private productService: ProductService) {
     this.products$ = this.productService.getAll();
   }
 
-  ngOnInit() {
-  }
-
-
+  ngOnInit() {}
 }
