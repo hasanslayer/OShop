@@ -5,6 +5,7 @@ import {
 } from 'angularfire2/database';
 import { Product } from './models/product';
 import 'rxjs/add/operator/take';
+import 'rxjs/add/operator/map';
 import { FirebaseApp } from 'angularfire2';
 import { ShoppingCart } from './models/shopping-cart';
 import { ShoppingCartItem } from './models/shopping-cart-item';
@@ -24,10 +25,10 @@ export class ShoppingCartService {
     return this.db.object('/shopping-carts/' + cartId + '/items/' + productId);
   }
 
-  async getCart(): Promise<FirebaseObjectObservable<ShoppingCart>> {
+  async getCart(): Promise<Observable<ShoppingCart>> {
     let cartId = await this.getOrCreateCartId();
 
-    return this.db.object('/shopping-carts/' + cartId);
+    return this.db.object('/shopping-carts/' + cartId).map(x => new ShoppingCart(x.items));
   }
 
   private async getOrCreateCartId(): Promise<string> {
