@@ -2,6 +2,7 @@
 <div class="row col-10" *ngIf="cart$ | async as cart">
   <p>
     You have {{ cart.totalItemsCount }} items in your shopping cart.
+    <button *ngIf="cart.items.length > 0" class="btn btn-light btn-sm" (click)="clearCart()">Clear Shopping Cart</button>
   </p>
 
   <table class="table">
@@ -36,5 +37,5 @@
       </tr>
     </tfoot>
   </table>
-  <button class="btn btn-danger btn-sm" (click)="clearCart()">Clear Shopping Cart</button>
+  <a routerLink="/check-out" *ngIf="cart.items.length > 0"  class="btn btn-primary">Check out</a>
 </div>
