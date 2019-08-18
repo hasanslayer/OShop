@@ -3,9 +3,13 @@ import { ShoppingCart } from './shopping-cart';
 export class Order {
   datePlaced: number;
   items: any[];
+  shipping:{};
+  userId :string;
 
   constructor(userId: string, shipping: any, shoppingCart: ShoppingCart) {
     this.datePlaced = new Date().getTime();
+    this.shipping = shipping;
+    this.userId = userId;
 
     this.items = shoppingCart.items.map(i => {
       return {
