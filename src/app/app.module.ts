@@ -13,18 +13,16 @@ import { SharedModule } from 'shared/shared.module';
 import { environment } from '../environments/environment';
 import { AdminModule } from './admin/admin.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { NavComponent } from './nav/nav.component';
+import { HomeComponent } from './core/components/home/home.component';
+import { LoginComponent } from './core/components/login/login.component';
+import { NavComponent } from './core/components/nav/nav.component';
 import { ProductsComponent } from './shopping/components/products/products.component';
 import { ShoppingModule } from './shopping/shopping.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavComponent,
-    LoginComponent,
-    HomeComponent,
+    AppComponent
 
   ],
   imports: [
@@ -32,6 +30,7 @@ import { ShoppingModule } from './shopping/shopping.module';
     SharedModule,
     AdminModule,
     ShoppingModule,
+    CoreModule,
     FormsModule,
     CustomFormsModule,
     DataTableModule,
