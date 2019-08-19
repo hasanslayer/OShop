@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthService } from './auth.service';
+import { AuthService } from 'shared/services/auth.service';
 import { Router } from '@angular/router';
-import { UserService } from './user.service';
+import { UserService } from 'shared/services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +24,7 @@ export class AppComponent {
 
       localStorage.getItem('returnUrl');
       router.navigateByUrl(returnUrl);
+      localStorage.removeItem('returnUrl');
     });
   }
 }

@@ -3,12 +3,12 @@ import {
   AngularFireDatabase,
   FirebaseObjectObservable
 } from 'angularfire2/database';
-import { Product } from './models/product';
+import { Product } from 'shared/models/product';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/map';
 import { FirebaseApp } from 'angularfire2';
-import { ShoppingCart } from './models/shopping-cart';
-import { ShoppingCartItem } from './models/shopping-cart-item';
+import { ShoppingCart } from 'shared/models/shopping-cart';
+import { ShoppingCartItem } from 'shared/models/shopping-cart-item';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
